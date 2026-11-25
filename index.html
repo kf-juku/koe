@@ -1,0 +1,139 @@
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+<title>あなたの話を聞かせてください</title>
+<style>
+:root{--bg:#f4f5f8;--surface:#fff;--ink:#15161a;--sub:#8a8f99;--line:rgba(0,0,0,.09);--accent:#0a6cff;--accent-soft:#e8f0ff;--gold:#caa24a;--ng:#e0533c;--shadow:0 2px 20px rgba(20,24,40,.06);--glass:rgba(255,255,255,.75)}
+[data-theme=dark]{--bg:#0d1017;--surface:#161a23;--ink:#eef1f6;--sub:#8b93a3;--line:rgba(255,255,255,.1);--accent:#4f8cff;--accent-soft:#15233f;--gold:#e3c477;--ng:#ff6b54;--shadow:0 2px 24px rgba(0,0,0,.4);--glass:rgba(22,26,35,.75)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;font-size:15px;line-height:1.7}
+svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.wrap{max-width:430px;margin:0 auto;min-height:100vh;padding:0 16px 120px}
+header{position:sticky;top:0;z-index:5;margin:0 -16px;padding:12px 16px;background:var(--glass);backdrop-filter:saturate(160%) blur(14px);display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+header .t{font-weight:700;flex:1}header button{background:none;border:0;color:var(--sub);cursor:pointer;padding:4px}
+.bar{height:6px;background:var(--line);border-radius:3px;margin:14px 0 4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent);border-radius:3px;transition:width .4s}
+.cnt{font-size:12px;color:var(--sub);text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px;margin-top:14px}
+.lab{font-size:11px;letter-spacing:.14em;color:var(--sub);font-weight:700}
+h2{font-size:19px;margin:4px 0 6px;line-height:1.45}.hint{color:var(--sub);font-size:13px;margin:0 0 10px}
+.q{font-weight:700;font-size:14px;margin:16px 0 8px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.g.c1{grid-template-columns:1fr}
+.o{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 8px;font:inherit;font-size:14px;cursor:pointer;text-align:center}
+.o.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:700}.o.w{grid-column:1/-1}
+textarea,select,input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px;font:inherit;background:var(--surface);color:var(--ink)}
+textarea{min-height:84px;resize:vertical}.miss{border-color:var(--ng)!important}
+.ai{display:flex;gap:10px;margin:12px 0 8px;align-items:flex-start}.ai .ic{flex:none;width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.ai .bub{background:var(--accent-soft);border-radius:4px 16px 16px 16px;padding:10px 14px;font-size:14px}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;border:0;border-radius:14px;padding:14px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;background:var(--accent);color:#fff;margin-top:12px;text-decoration:none}
+.btn:active{transform:translateY(2px) scale(.99)}.btn:disabled{opacity:.5}.btn.sub{background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}.btn.gold{background:linear-gradient(135deg,var(--gold),#a9842f)}
+.nav{position:fixed;left:0;right:0;bottom:0;padding:12px 16px 18px;background:var(--glass);backdrop-filter:blur(14px);border-top:1px solid var(--line)}.nav .in{max-width:398px;margin:0 auto}.nav .btn{margin:0}
+.ent{display:flex;gap:14px;align-items:center;cursor:pointer}.ent .ic{width:48px;height:48px;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}.ent .ic svg{width:26px;height:26px}
+.ent b{font-size:16px}.ent small{display:block;color:var(--sub);font-size:12.5px;line-height:1.5}
+.safe{display:flex;gap:10px;background:var(--accent-soft);border-radius:14px;padding:12px 14px;font-size:13px;margin-top:12px}.safe svg{flex:none;color:var(--accent)}
+.draft{background:var(--bg);border-radius:14px;padding:14px;font-size:14px;white-space:pre-wrap}
+.err{color:var(--ng);font-size:13px;margin-top:8px}.note{font-size:12px;color:var(--sub);margin-top:8px}
+.done{text-align:center}.done svg{width:56px;height:56px;color:var(--gold)}.no{font-variant-numeric:tabular-nums;font-weight:700}
+.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:#15161a;color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:opacity .3s;pointer-events:none}.toast.show{opacity:1}
+.hide{display:none}
+</style></head><body>
+<div class=wrap>
+<header><button id=back class=hide onclick="go(-1)" aria-label="もどる"></button><span class=t id=ttl></span><button id=thm onclick="theme()" aria-label="明るさ"></button></header>
+<div id=prog class=hide><div class=bar><i id=barin></i></div><div class=cnt id=cnt></div></div>
+<div id=main></div>
+</div>
+<div class="nav hide" id=nav><div class=in><button class="btn" id=nx onclick="go(1)"></button></div></div>
+<div class=toast id=toastEl></div>
+<script>
+var D={"説明": "生徒と保護者の声の質問の正本。スマホのページ・印刷用の紙・GASの列は、すべてこのファイルから作る（片方だけ直さない）。直したら 版 を上げる", "版": 1, "最初の案内": "個人情報は公開しないので、安心して答えてください。", "高校": {"公立": ["横須賀", "横須賀大津", "追浜", "横須賀総合", "横須賀南", "津久井浜", "逗子葉山", "三浦初声", "横須賀工業", "海洋科学", "横浜市立金沢", "横浜氷取沢"], "私立": ["三浦学苑", "横須賀学院", "湘南学院", "緑ヶ丘女子", "山手学院"]}, "紙の深掘りの一文": "何があって、どんな場面でそう思ったかも書いてください", "既定の深掘り": "もう少しくわしく、たとえばどんな場面でそう感じましたか？", "入口": [{"キー": "現役生", "記号": "gen", "ブランド": "クロフネ", "番号の頭": "G", "はじめに出す": true, "下書き": false, "アイコン": "school", "目安": "10分", "お礼": "あなたの話は、これから高校を選ぶ後輩の参考になります。", "名前": "現役生の口コミ", "シート": "現役生の口コミ", "ボタン": "高校に通っている人", "ボタンの説明": "入学してから分かった、高校のリアルを教えてください", "紙の題": "現役生による高校レポート", "ページ": [{"題": "名前と学校", "問": [{"id": "名前", "種類": "名前", "見出し": "名前"}, {"id": "高校", "種類": "高校", "見出し": "今通っている高校"}, {"id": "学年", "種類": "一つ", "見出し": "学年", "選択肢": ["高校1年生", "高校2年生", "高校3年生", "卒業した"]}]}, {"題": "入学する前と後で、印象が変わったことは？", "案内": "良くなったことでも、思っていたのと違ったことでも", "問": [{"id": "印象の変化", "種類": "深掘り", "見出し": "", "深掘りキー": "印象"}]}, {"題": "学校の雰囲気は？", "案内": "当てはまるものを全部選んで、ひとこと書いてください", "問": [{"id": "雰囲気", "種類": "いくつでも", "見出し": "", "選択肢": ["にぎやか", "落ち着いている", "まじめな人が多い", "自由な感じ", "運動部が目立つ", "人間関係はおだやか"]}, {"id": "雰囲気のひとこと", "種類": "深掘り", "見出し": "どんな感じか、ひとこと", "深掘りキー": "雰囲気", "深掘りに使う選択": "雰囲気"}, {"id": "いじめやトラブル", "種類": "一つ", "見出し": "いじめやトラブルの話は", "選択肢": ["ほとんど聞かない", "たまに聞く", "ときどき聞く", "よく聞く", "分からない"]}]}, {"題": "校則・制服・アルバイト", "案内": "実際どうなっているかを教えてください", "問": [{"id": "髪を染める", "種類": "一つ", "見出し": "髪を染めるのは", "選択肢": ["染めてよい", "決まりはあるが何も言われない", "注意される", "分からない"]}, {"id": "スマホ", "種類": "一つ", "見出し": "スマホは", "選択肢": ["いつでも使える", "休み時間なら使える", "校内では使えない", "分からない"]}, {"id": "校則の全体", "種類": "一つ", "見出し": "校則は全体として", "選択肢": ["かなり自由", "やや自由", "ややきびしい", "かなりきびしい", "分からない"]}, {"id": "制服", "種類": "一つ", "見出し": "制服は気に入っている？", "選択肢": ["とても気に入っている", "やや気に入っている", "あまり気に入っていない", "まったく気に入っていない"]}, {"id": "アルバイト", "種類": "一つ", "見出し": "アルバイトをしている人は", "選択肢": ["かなり多い", "やや多い", "少ない", "ほとんどいない", "分からない"]}]}, {"題": "授業と勉強はどう？", "問": [{"id": "授業の進み方", "種類": "一つ", "見出し": "授業の進み方", "選択肢": ["かなりゆっくり", "ややゆっくり", "やや速い", "かなり速い", "分からない"]}, {"id": "課題と小テスト", "種類": "一つ", "見出し": "課題・小テスト", "選択肢": ["かなり少ない", "やや少ない", "やや多い", "かなり多い", "分からない"]}, {"id": "まわりの勉強", "種類": "一つ", "見出し": "まわりは勉強している？", "選択肢": ["かなりしている", "ややしている", "あまりしていない", "ほとんどしていない", "分からない"]}]}, {"題": "部活はどう？", "案内": "自分が入っていない部の話もOK", "問": [{"id": "入っている部", "種類": "短い", "見出し": "入っている部", "例": "例：サッカー部（入っていなければ空でOK）"}, {"id": "部活の日数", "種類": "一つ", "見出し": "週に何日", "選択肢": ["1〜2日", "3〜4日", "5日以上", "入っていない"]}, {"id": "部活と勉強", "種類": "一つ", "見出し": "勉強との両立", "選択肢": ["十分できている", "まあできている", "あまりできていない", "できていない"]}, {"id": "人気の部", "種類": "短い", "見出し": "人気がある・部員が多い部", "例": "例：ダンス部、バスケ部"}, {"id": "強い部", "種類": "短い", "見出し": "強いと言われている部", "例": "例：陸上部（なければ空でOK）"}]}, {"題": "行事は盛り上がる？", "問": [{"id": "文化祭", "種類": "一つ", "見出し": "文化祭", "選択肢": ["かなり盛り上がる", "やや盛り上がる", "あまり盛り上がらない", "盛り上がらない", "分からない"]}, {"id": "体育祭", "種類": "一つ", "見出し": "体育祭", "選択肢": ["かなり盛り上がる", "やや盛り上がる", "あまり盛り上がらない", "盛り上がらない", "分からない"]}, {"id": "模擬店", "種類": "一つ", "見出し": "文化祭の模擬店（食べ物などを売るお店）", "選択肢": ["ある", "ない", "分からない"]}]}, {"題": "施設と通学", "問": [{"id": "校舎", "種類": "一つ", "見出し": "校舎のきれいさ", "選択肢": ["かなりきれい", "ややきれい", "やや古い", "かなり古い"]}, {"id": "食堂と購買", "種類": "いくつでも", "見出し": "食堂・購買（いくつでも）", "選択肢": ["食堂をよく使う", "購買をよく使う", "あるけど使わない", "ない"]}, {"id": "朝の通学", "種類": "一つ", "見出し": "朝の通学は", "選択肢": ["かなり楽", "やや楽", "やや大変", "かなり大変"]}, {"id": "通学で当てはまるもの", "種類": "いくつでも", "見出し": "当てはまるもの（いくつでも）", "選択肢": ["遅刻ぎりぎりの人が多い", "坂がきつい", "電車やバスが混む", "特にない"]}]}, {"題": "進路はどう？", "案内": "まわりの人や、先輩の話で知っていることでもOK", "問": [{"id": "多い進路", "種類": "いくつでも", "見出し": "多い進路（いくつでも）", "選択肢": ["一般入試で大学", "推薦・総合型で大学", "専門学校", "就職", "分からない"]}, {"id": "塾や予備校", "種類": "一つ", "見出し": "塾や予備校に通っている人は", "選択肢": ["ほとんどの人", "半分くらい", "少し", "ほとんどいない", "分からない"]}, {"id": "進路指導", "種類": "一つ", "見出し": "学校の進路指導・面談", "選択肢": ["かなり手厚い", "やや手厚い", "あまり手厚くない", "ほとんどない", "分からない"]}]}, {"題": "どんな子に向いている？ 受験生へひとこと", "案内": "向いていない子の話もOK", "問": [{"id": "向いている子", "種類": "深掘り", "見出し": "", "深掘りキー": "向き"}]}]}, {"キー": "合格体験記", "記号": "gokaku", "ブランド": "クロフネ", "番号の頭": "J", "はじめに出す": true, "下書き": true, "アイコン": "trophy", "目安": "10分", "お礼": "あなたの話は、これから受験する後輩の参考になります。", "名前": "合格体験記", "シート": "合格体験記", "ボタン": "受験を終えた人", "ボタンの説明": "クロフネでの受験を振り返ってください", "紙の題": "合格までの道のり", "ページ": [{"題": "名前と進学する高校", "問": [{"id": "名前", "種類": "名前", "見出し": "名前"}, {"id": "高校", "種類": "高校", "見出し": "進学する高校"}, {"id": "通った期間", "種類": "一つ", "見出し": "クロフネに通った期間", "選択肢": ["半年まで", "1年", "2年", "3年以上"]}, {"id": "きっかけ", "種類": "いくつでも", "見出し": "クロフネに入ったきっかけ（いくつでも）", "選択肢": ["友達の紹介", "家族のすすめ", "チラシ", "ホームページ・口コミ", "前の塾から変えた", "そのほか"]}]}, {"題": "クロフネに入る前、困っていたことは？", "案内": "勉強のことでも、それ以外でも", "問": [{"id": "入る前の困りごと", "種類": "深掘り", "見出し": "", "深掘りキー": "困りごと", "口コミに使う": true}]}, {"題": "入ってから変わったことは？", "問": [{"id": "変わったこと", "種類": "いくつでも", "見出し": "当てはまるもの（いくつでも）", "選択肢": ["勉強の習慣がついた", "成績が上がった", "苦手が減った", "自信がついた", "志望校が決まった", "特にない"], "口コミに使う": true}, {"id": "点の変化", "種類": "一つ", "見出し": "内申や定期テストの点は", "選択肢": ["かなり上がった", "少し上がった", "変わらない", "分からない"]}]}, {"題": "クロフネでの勉強のしかたで、よかったものは？", "案内": "いくつでも", "問": [{"id": "よかった勉強のしかた", "種類": "いくつでも", "見出し": "", "選択肢": ["分かるまで質問できた", "自習室で勉強できた", "苦手な単元をやり直せた", "テスト前の対策", "過去問の進め方", "計画の立て方"], "口コミに使う": true}]}, {"題": "受験の時期に、助かったことは？", "案内": "いくつでも", "問": [{"id": "助かったこと", "種類": "いくつでも", "見出し": "", "選択肢": ["面談で志望校を相談できた", "直前の授業", "先生のひとことで気持ちが楽になった", "自習室が使えた", "家族が支えてくれた", "仲間がいた"], "口コミに使う": true}]}, {"題": "教室の雰囲気は？", "案内": "いくつでも", "問": [{"id": "教室の雰囲気", "種類": "いくつでも", "見出し": "", "選択肢": ["質問しやすい", "集中できる", "先生が話しやすい", "仲間がいる", "静か", "にぎやか"], "口コミに使う": true}]}, {"題": "合格が分かったときの気持ちは？", "問": [{"id": "合格の気持ち", "種類": "一つ", "見出し": "", "選択肢": ["ほっとした", "すごくうれしかった", "信じられなかった", "そのほか"]}, {"id": "合格の気持ちのひとこと", "種類": "ひとこと", "見出し": "書けたらひとこと", "例": "なくてもOK"}]}, {"題": "つらかったことと、どう乗り越えたか", "案内": "気分転換のしかたや、毎日のルーティンでもOK", "問": [{"id": "乗り越え方", "種類": "深掘り", "見出し": "", "深掘りキー": "乗り越え"}]}, {"題": "後輩へひとこと", "案内": "これからクロフネで受験する人へ", "問": [{"id": "後輩へ", "種類": "深掘り", "見出し": "", "深掘りキー": "後輩", "口コミに使う": true}]}]}], "深掘り": {"印象": [["行事|文化祭|体育祭", "行事のどんなところが、思っていたのと違いましたか？ たとえば準備の期間や、クラスの雰囲気など。"], ["勉強|課題|テスト|授業", "勉強のどんなところが、思っていたのと違いましたか？ たとえば授業の速さや、課題の量など。"], ["友|人間関係|クラス", "クラスや友達のどんなところが、思っていたのと違いましたか？"], ["校則|自由|ゆる", "どんなところで自由だと感じましたか？"]], "雰囲気": [["にぎやか", "休み時間や放課後は、どんな感じですか？"], ["落ち着いている", "授業中や休み時間は、どんな過ごし方をしている人が多いですか？"], ["まじめな人が多い", "「まじめ」だと感じるのは、どんなところですか？"], ["自由な感じ", "「自由」だと感じるのは、どんなところですか？"], ["運動部が目立つ", "運動部が目立つのは、どんな場面ですか？"]], "向き": [[".", "この学校に入って「合っていた」と思うのは、どんなところですか？"]], "困りごと": [["勉強|成績|テスト|点|教科|数学|英語|国語|理科|社会", "どの教科で、どんなふうに困っていましたか？"], ["部活|時間|忙", "勉強の時間は、どうしていましたか？"]], "乗り越え": [[".", "いちばんつらかったのは、いつごろでしたか？ そのとき、何をしていましたか？"]], "後輩": [[".", "それを伝えたいのは、どんなことがあったからですか？"]]}, "ブランド": {"クロフネ": {"名前": "進学塾クロフネ", "口コミ": {"京急久里浜駅前教室": "https://g.page/r/CfjgJdZ5asGKEAE/review", "北久里浜教室": "https://g.page/r/CctpRwqWIOe_EAE/review"}}, "コードアドベンチャー": {"名前": "コードアドベンチャー", "口コミ": {"京急久里浜クロフネ教室": "https://g.page/r/CTjDRqIMckNsEAE/review", "北久里浜クロフネ教室": "https://g.page/r/Ca_xAFPMqeCmEAE/review"}}}, "はじめのブランド": "クロフネ"}; var GAS_URL="https://script.google.com/macros/s/AKfycby7cfxCTVk8O_Ea7o0VZI-DxQY1ZFeoPqVe9lcK-UK0xlPNlj17vJ-sTENI8Uof0-6d/exec";
+var QS=new URLSearchParams(location.search);
+var MODE=(QS.get('入力')==='代理'||QS.get('proxy')==='1')?'代理入力':'スマホ';
+// ?k=記号 で開くと、その入口だけを出す（コードアドベンチャーの保護者など。ほかの入口は見せない）
+var FIX=D['入口'].filter(function(x){return x['記号']===QS.get('k')})[0]||null;
+var SHOW=FIX?[FIX]:D['入口'].filter(function(x){return x['はじめに出す']});
+function brand(e){return D['ブランド'][e?e['ブランド']:D['はじめのブランド']]}
+document.title=brand(FIX)['名前']+'｜あなたの話を聞かせてください';
+var P={left:'<path d="M15 6l-6 6l6 6"/>',right:'<path d="M5 12h14M13 18l6-6M13 6l6 6"/>',moon:'<path d="M12 3a6 6 0 0 0 9 9a9 9 0 1 1 -9 -9z"/>',chat:'<path d="M3 20l1.3-3.9a9 8 0 1 1 3.4 2.9z"/>',school:'<path d="M22 9l-10-4l-10 4l10 4l10-4v6"/><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/>',trophy:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M5 9a2 2 0 0 1 0-4h2M19 9a2 2 0 0 0 0-4h-2"/>',check:'<circle cx="12" cy="12" r="9"/><path d="M9 12l2 2l4-4"/>',lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',send:'<path d="M10 14L21 3M21 3l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z"/>',ext:'<path d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6M11 13l9-9M15 4h5v5"/>'};
+function I(n){return '<svg class=i viewBox="0 0 24 24">'+P[n]+'</svg>'}
+back.innerHTML=I('left');thm.innerHTML=I('moon');
+function theme(){var d=document.documentElement;d.dataset.theme=d.dataset.theme==='dark'?'':'dark'}
+function toast(t){toastEl.textContent=t;toastEl.classList.add('show');setTimeout(function(){toastEl.classList.remove('show')},1600)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var WIDE=['分からない','特にない','入っていない'];
+var ent=null,i=0,A={};
+// 下書き：途中で閉じても続きから（この端末だけ）
+function saveDraft(){try{if(ent)localStorage.setItem('koe_draft',JSON.stringify({k:ent['キー'],i:i,A:A,t:Date.now()}))}catch(e){}}
+function loadDraft(){try{var d=JSON.parse(localStorage.getItem('koe_draft')||'null');if(d&&Date.now()-d.t<3*86400000)return d}catch(e){}return null}
+function clearDraft(){try{localStorage.removeItem('koe_draft')}catch(e){}}
+function sid(){return 'K_'+Date.now()+'_'+Math.random().toString(36).slice(2,10)}
+
+function home(){ent=null;i=0;ttl.textContent=brand(FIX)['名前'];back.classList.add('hide');prog.classList.add('hide');nav.classList.add('hide');
+ var h='<div class=card><div class=lab>VOICE</div><h2>あなたの話を聞かせてください</h2><p class=hint>選ぶだけの質問が中心です。だいたい'+esc((FIX||SHOW[0])['目安'])+'で終わります。</p><div class=safe>'+I('lock')+'<div>'+esc(D['最初の案内'])+'</div></div>'+(MODE==='代理入力'?'<p class=note>代理入力のモードです</p>':'')+'</div>';
+ var dr=loadDraft();
+ if(dr){var e=SHOW.filter(function(x){return x['キー']===dr.k})[0];if(e)h+='<div class=card><p class=hint>途中まで答えたものがあります。</p><button class="btn" onclick="resume()">続きから答える</button><button class="btn sub" onclick="clearDraft();home()">はじめから答える</button></div>'}
+ SHOW.forEach(function(e){h+='<div class="card ent" data-k="'+esc(e['キー'])+'" onclick="start(this.dataset.k)"><div class=ic>'+I(e['アイコン']||'chat')+'</div><div><b>'+esc(e['ボタン'])+'</b><small>'+esc(e['ボタンの説明'])+'</small></div></div>'});
+ main.innerHTML=h}
+function resume(){var d=loadDraft();ent=D['入口'].filter(function(x){return x['キー']===d.k})[0];A=d.A||{};i=d.i||0;ttl.textContent=ent['名前'];render()}
+function start(k){ent=D['入口'].filter(function(x){return x['キー']===k})[0];i=0;A={};A['__送信ID']=sid();ttl.textContent=ent['名前'];render()}
+
+function grid(q){var o=q['選択肢'],n=o.filter(function(x){return WIDE.indexOf(x)<0}).length,v=A[q.id],multi=q['種類']==='いくつでも';
+ return '<div class="g'+(n%2?' c1':'')+'">'+o.map(function(x){var on=multi?(v||[]).indexOf(x)>=0:v===x;return '<button class="o'+(WIDE.indexOf(x)>=0?' w':'')+(on?' on':'')+'" data-q="'+esc(q.id)+'" data-v="'+esc(x)+'" onclick="pick(this,'+multi+')">'+esc(x)+'</button>'}).join('')+'</div>'}
+function pick(b,multi){var id=b.dataset.q,v=b.dataset.v;
+ if(multi){var a=A[id]||[];var k=a.indexOf(v);if(k>=0)a.splice(k,1);else a.push(v);A[id]=a;b.classList.toggle('on')}
+ else{if(A[id]===v){delete A[id];b.classList.remove('on')}else{A[id]=v;[].forEach.call(b.parentNode.children,function(c){c.classList.remove('on')});b.classList.add('on')}}
+ saveDraft();follows()}
+function schoolSel(q){var v=A[q.id]||'',list=D['高校']['公立'].concat(D['高校']['私立']).map(function(x){return x+'高校'}),other=v&&list.indexOf(v)<0;
+ function og(lab,arr){return '<optgroup label="'+lab+'">'+arr.map(function(x){x+='高校';return '<option'+(v===x?' selected':'')+'>'+x+'</option>'}).join('')+'</optgroup>'}
+ return '<select data-q="'+esc(q.id)+'" onchange="schoolPick(this)"><option value="">選んでください</option>'+og('公立',D['高校']['公立'])+og('私立',D['高校']['私立'])+'<option value="__他"'+(other?' selected':'')+'>そのほか（書いて入力）</option></select><input class="'+(other?'':'hide')+'" data-q="'+esc(q.id)+'" data-o=1 placeholder="高校の名前" value="'+(other?esc(v):'')+'" style="margin-top:8px" oninput="A[this.dataset.q]=this.value;saveDraft()">'}
+function schoolPick(s){var inp=s.nextElementSibling;if(s.value==='__他'){inp.classList.remove('hide');A[s.dataset.q]=inp.value}else{inp.classList.add('hide');A[s.dataset.q]=s.value}saveDraft()}
+function deep(q){var id=q.id;return '<textarea data-q="'+esc(id)+'" oninput="A[this.dataset.q]=this.value;saveDraft();clearTimeout(this.t);this.t=setTimeout(follows,600)">'+esc(A[id]||'')+'</textarea>'+
+ '<div class=hide data-f="'+esc(id)+'"><div class=ai><div class=ic>'+I('chat')+'</div><div class=bub></div></div><textarea data-q2="'+esc(id)+'" placeholder="ひとことでOK" oninput="setFollow(this)">'+esc(A[id+'（追加の答え）']||'')+'</textarea></div>'}
+// 深掘り：選んだものと書いた言葉から、用意した質問を1つ出す（APIは使わない）
+function setFollow(t){A[t.dataset.q2+'（追加の答え）']=t.value;saveDraft()}
+function follows(){if(!ent)return;var pg=ent['ページ'][i];if(!pg)return;pg['問'].forEach(function(q){if(q['種類']!=='深掘り')return;var box=document.querySelector('[data-f="'+q.id+'"]');if(!box)return;
+ var sel=q['深掘りに使う選択']?[].concat(A[q['深掘りに使う選択']]||[]).join(' '):'';var text=A[q.id]||'';var src=sel+' '+text,qq='';
+ (D['深掘り'][q['深掘りキー']]||[]).some(function(r){if(new RegExp(r[0]).test(src)&&(r[0]!=='.'||text.trim())){qq=r[1];return true}});
+ if(!qq&&text.trim())qq=D['既定の深掘り'];
+ if(A[q.id+'（追加の質問）']&&A[q.id+'（追加の質問）']!==qq&&A[q.id+'（追加の答え）'])qq=A[q.id+'（追加の質問）']; // 答えた後は質問を変えない
+ if(qq){A[q.id+'（追加の質問）']=qq}else{delete A[q.id+'（追加の質問）']}
+ box.classList.toggle('hide',!qq);box.querySelector('.bub').textContent=qq})}
+
+function render(){back.classList.remove('hide');if(i>=ent['ページ'].length)return confirmSend();prog.classList.remove('hide');nav.classList.remove('hide');
+ var pgs=ent['ページ'],pg=pgs[i];barin.style.width=(i/pgs.length*100)+'%';cnt.textContent=(i+1)+' / '+pgs.length;
+ var deepPage=pg['問'].some(function(q){return q['種類']==='深掘り'});
+ var h='<div class=card><div class=lab>'+(deepPage?'あなたの言葉で':'選んでください')+'</div><h2>'+esc(pg['題'])+'</h2>'+(pg['案内']?'<p class=hint>'+esc(pg['案内'])+'</p>':'');
+ pg['問'].forEach(function(q){var t=q['種類'];if(q['見出し'])h+='<div class=q>'+esc(q['見出し'])+'</div>';
+  if(t==='名前')h+='<input data-q="名前" placeholder="フルネーム" value="'+esc(A['名前']||'')+'" oninput="A.名前=this.value;saveDraft()">';
+  else if(t==='高校')h+=schoolSel(q);
+  else if(t==='一つ'||t==='いくつでも')h+=grid(q);
+  else if(t==='短い')h+='<input data-q="'+esc(q.id)+'" placeholder="'+esc(q['例']||'')+'" value="'+esc(A[q.id]||'')+'" oninput="A[this.dataset.q]=this.value;saveDraft()">';
+  else if(t==='ひとこと')h+='<textarea data-q="'+esc(q.id)+'" placeholder="'+esc(q['例']||'')+'" style="min-height:60px" oninput="A[this.dataset.q]=this.value;saveDraft()">'+esc(A[q.id]||'')+'</textarea>';
+  else if(t==='深掘り')h+=deep(q)});
+ h+='<div class=err id=err></div></div>';main.innerHTML=h;follows();
+ nx.disabled=false;nx.innerHTML=(i===pgs.length-1?'確認へ ':'次へ ')+I('right');scrollTo(0,0);saveDraft()}
+function go(d){if(!ent)return;
+ if(d>0&&i<ent['ページ'].length){var miss=[];ent['ページ'][i]['問'].forEach(function(q){if((q['種類']==='名前'||q['種類']==='高校')&&!String(A[q.id]||'').trim())miss.push(q['見出し'])});
+  if(miss.length){err.textContent=miss.join('・')+'を入れてください';return}}
+ if(d<0&&i>=ent['ページ'].length){i=ent['ページ'].length-1;return render()}
+ i+=d;if(i<0){saveDraft();return home()}render()}
+function confirmSend(){prog.classList.add('hide');nav.classList.add('hide');
+ main.innerHTML='<div class=card><h2>これで送りますか？</h2><p class=hint>'+esc(A['名前']||'')+' さん／'+esc(A['高校']||'')+'</p><button class=btn id=sendBtn onclick="send()">送る '+I('send')+'</button><button class="btn sub" onclick="go(-1)">もどって直す</button><div class=err id=err></div></div>'}
+function send(){var btn=document.getElementById('sendBtn');if(btn.disabled)return;btn.disabled=true;btn.textContent='送っています…';
+ var ans={};Object.keys(A).forEach(function(k){if(k.indexOf('__')!==0)ans[k]=A[k]});
+ var body={action:'submit','入口':ent['キー'],'版':D['版'],'入力のしかた':MODE,'送信ID':A['__送信ID'],'答え':ans};
+ if(!GAS_URL){done({ok:true,受付番号:'（試し：送っていません）'},ans);return}
+ var fd=new FormData();fd.append('body',JSON.stringify(body));
+ fetch(GAS_URL,{method:'POST',body:fd}).then(function(r){return r.json()}).then(function(res){
+  if(res&&res.ok){clearDraft();done(res,ans)}else{fail(res&&res.error)}}).catch(function(){fail('通信できませんでした')})}
+function fail(msg){var b=document.getElementById('sendBtn');b.disabled=false;b.innerHTML='もう一度送る '+I('send');
+ document.getElementById('err').textContent=(msg||'送れませんでした')+'。答えはこの端末に残っています。電波のよいところで、もう一度送ってください。'}
+function draftText(ans){var t=[];ent['ページ'].forEach(function(pg){pg['問'].forEach(function(q){if(!q['口コミに使う'])return;var v=ans[q.id];if(!v||(Array.isArray(v)&&!v.length))return;
+ if(Array.isArray(v))t.push(v.filter(function(x){return WIDE.indexOf(x)<0}).join('。')+'。');else{t.push(String(v));var f=ans[q.id+'（追加の答え）'];if(f)t.push(String(f))}})});
+ return t.filter(function(x){return x&&x!=='。'}).join('\n')}
+function done(res,ans){prog.classList.add('hide');nav.classList.add('hide');back.classList.add('hide');var kf=!!ent['下書き'],dt=kf?draftText(ans):'',B=brand(ent),REVIEW=B['口コミ'];
+ var links=Object.keys(REVIEW).map(function(k){return '<a class="btn gold" '+(REVIEW[k]?'href="'+esc(REVIEW[k])+'" target=_blank':'')+' onclick="'+(kf?'cp();':'')+'">'+I('ext')+' '+k+'の口コミを書く</a>'}).join('');
+ main.innerHTML='<div class="card done">'+I('check')+'<h2>ありがとうございました！</h2><p class=hint>'+esc(ent['お礼'])+'</p><p class=note>受付番号 <span class=no>'+esc(res['受付番号'])+'</span></p></div>'+
+ '<div class=card><div class=lab>よかったら</div><h2>Googleの口コミも書いてもらえませんか</h2><p class=hint>書くかどうかは自由です。'+(kf?'下は、あなたが'+esc(ent['ブランド'])+'について答えた言葉を並べたものです。使うときは自由に直してください。':esc(ent['ブランド'])+'について、ひとことでも大丈夫です。')+'</p>'+
+ (kf&&dt?'<div class=draft id=dt>'+esc(dt)+'</div><button class="btn sub" onclick="cp()">'+I('copy')+' 下書きをコピー</button>':'')+links+'</div>'+
+ '<button class="btn sub" onclick="home()">はじめに戻る</button>'}
+function cp(){var el=document.getElementById('dt');if(!el)return;try{navigator.clipboard.writeText(el.textContent).then(function(){toast('コピーしました')},function(){toast('コピーできませんでした')})}catch(e){toast('コピーできませんでした')}}
+home();
+</script></body></html>
